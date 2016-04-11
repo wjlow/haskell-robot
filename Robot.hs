@@ -37,5 +37,7 @@ onGrid (x, y)
 
 
 robot :: Position -> Direction -> [(Position, Direction) -> (Position, Direction)] -> (Position, Direction)
-robot pos dir commands = compose commands (place pos dir)
-    where compose fs v = foldl (flip (.)) id fs $ v
+robot pos dir commands = reduce commands initial
+    where
+        initial = place pos dir
+        reduce fs v = foldl (flip (.)) id fs $ v -- reduce [f, g, h] x = h(g(f(id(x))))
