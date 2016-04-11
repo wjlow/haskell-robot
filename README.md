@@ -2,9 +2,15 @@
 
 Haskell implementation of the popular Toy Robot coding exercise
 
-Example usage:
+Example usage (case sensitive at the moment, commands are in caps, directions are in title case):
 
 ```
-*Main> robot (0,0) North [move, left, left, right, move, move, right, move, move, right, right]
-((0,3),South)
+$ runhaskell Robot.hs
+PLACE 1,2,West
+MOVE
+RIGHT
+MOVE
+MOVE
+REPORT
+"((0,3),North)"
 ```
