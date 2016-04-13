@@ -65,7 +65,7 @@ main = do
     line <- getLine
     let (pos, dir) = parsePlace line
     commands <- mainloop []
-    return $ show (robot pos dir commands)
+    putStrLn $ show (robot pos dir commands)
 
 mainloop commands = do
     line <- getLine
